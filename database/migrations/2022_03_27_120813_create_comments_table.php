@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('comment');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
         });
     }

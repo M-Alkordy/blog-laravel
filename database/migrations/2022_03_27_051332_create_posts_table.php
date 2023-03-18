@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreignId('cat_id')->constraint('categories')->onDelete('cascade');
             $table->string('image');
             $table->integer('views');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')
             $table->timestamps();
         });
     }

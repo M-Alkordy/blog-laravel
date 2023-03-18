@@ -22,4 +22,13 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class, 'cat_id');
     }
+
+    public function posts()
+    {
+        $this->hasMany(Comment::class,'post_id','id');
+    }
+    public function user()
+    {
+        $this->belongsTo(User::class,'user_id','id');
+    }
 }

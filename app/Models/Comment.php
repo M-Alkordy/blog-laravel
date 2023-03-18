@@ -15,4 +15,9 @@ class Comment extends Model
         'email',
         'comment'
     ];
+
+    public function post()
+    {
+        $this->belongsTo(Post::class,'post_id','id');
+    }
 }
